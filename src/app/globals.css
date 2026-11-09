@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Palette mirrors the app's src/theme/tokens.ts (light + dark). */
+:root {
+  --ink: #0f1c2e;
+  --muted: #5b6b7c;
+  --muted2: #6e7b88;
+  --paper: #f5f3ee;
+  --card: #ffffff;
+  --line: rgba(15, 28, 46, 0.08);
+  --line-strong: rgba(15, 28, 46, 0.14);
+  --night: #0f1c2e;
+  --on-ink: #f5f3ee;
+  --green: #0fa36b;
+  --green-hover: #0b7c51;
+  --green-soft: #eaf6f0;
+  --green-text: #1b6b4d;
+  --amber-soft: #fdf3e2;
+  --amber-text: #8a5e14;
+  --blue-soft: #edf1fb;
+  --blue-text: #2f55be;
+  --red: #b0392c;
+  --red-soft: #fbecea;
+  --track: rgba(15, 28, 46, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2efe8;
+    --muted: #9aa8b6;
+    --muted2: #8593a1;
+    --paper: #0b1422;
+    --card: #152236;
+    --line: rgba(242, 239, 232, 0.1);
+    --line-strong: rgba(242, 239, 232, 0.18);
+    --green: #12b076;
+    --green-hover: #0fa36b;
+    --green-soft: #12302a;
+    --green-text: #5fd3a0;
+    --amber-soft: #33270f;
+    --amber-text: #f0bf6b;
+    --blue-soft: #17233f;
+    --blue-text: #9bb6ff;
+    --red: #ff8a7a;
+    --red-soft: #3a1a17;
+    --track: rgba(242, 239, 232, 0.07);
+  }
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-muted2: var(--muted2);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-night: var(--night);
+  --color-on-ink: var(--on-ink);
+  --color-green: var(--green);
+  --color-green-hover: var(--green-hover);
+  --color-green-soft: var(--green-soft);
+  --color-green-text: var(--green-text);
+  --color-amber-soft: var(--amber-soft);
+  --color-amber-text: var(--amber-text);
+  --color-blue-soft: var(--blue-soft);
+  --color-blue-text: var(--blue-text);
+  --color-red: var(--red);
+  --color-red-soft: var(--red-soft);
+  --color-track: var(--track);
+  --font-sans: var(--font-instrument-sans);
+  --font-serif: var(--font-instrument-serif);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.micro {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.skeleton {
+  background: var(--track);
+  border-radius: 10px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
